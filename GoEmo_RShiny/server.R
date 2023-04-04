@@ -16,7 +16,9 @@ server <- function(input, output) {
                      y= ..prop.. ), 
                 stat= "count", vjust = -.5) +
       theme(legend.position="none") +
-      scale_y_continuous(labels = scales::percent)
+      scale_y_continuous(labels = scales::percent) +
+      labs(x = 'Sentiment',
+           y = 'Proportion')
     
     })
 

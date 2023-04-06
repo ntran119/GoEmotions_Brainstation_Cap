@@ -10,7 +10,7 @@ ui <-  fluidPage(
       # Define the sidebar with one input
       sidebarPanel(
         selectInput("model_choice", "Choose a Model:", 
-                    choices=c("Logistic_Regression","SVM","Decision_Tree","KNN"),
+                    choices=c("Logistic_Regression","SVM","Decision_Tree","KNN",'BERT'),
                     selected = 'Logistic_Regression'
       )),
       

@@ -9,16 +9,19 @@ server <- function(input, output) {
     model <- input$model_choice
     
     dota_comments %>% 
-      ggplot(
-      aes(x = eval(parse(text = input$model_choice)))) + 
-      geom_bar(aes(y= ..prop.., fill = factor(..x..)), stat= "count") +
-      geom_text(aes( label = scales::percent(..prop..),
-                     y= ..prop.. ), 
-                stat= "count", vjust = -.5) +
-      theme(legend.position="none") +
+      ggplot(aes(x = eval(parse(text = input$model_choice)))) +
+      geom_bar(aes(y = (..count..)/sum(..count..), 
+                   fill = factor(..x..))) +
+      geom_text(aes(y = ((..count..)/sum(..count..)), 
+                    label = scales::percent((..count..)/sum(..count..))), 
+                    stat = "count", 
+                    vjust = -0.25) +
       scale_y_continuous(labels = scales::percent) +
+      theme(legend.position="none") +
       labs(x = 'Sentiment',
-           y = 'Proportion')
+           y = 'Proportion',
+           title = 'Proportion of Sentiment') +
+      theme(plot.title = element_text(size=22))
     
     })
 
@@ -30,7 +33,10 @@ server <- function(input, output) {
                  alpha = 0.5,
                  text = paste("Comment ID:", ID))) + 
       geom_point() +
-      theme(legend.position="none")
+      theme(legend.position="none") +
+      labs(x = 'Component 1',
+           y = 'Component 2',
+           title = 'PCA Projection')
     
     ggplotly(p, tooltip = "text")
     

@@ -1,7 +1,5 @@
 library(tidyverse)
 
-df <- read_csv("GitHub/GoEmotions_Brainstation_Cap/GoEmotions_cleaned_ekman.csv")
-
 df_simple <- read_csv("GitHub/GoEmotions_Brainstation_Cap/GoEmotions_Sentiment_simple.csv")
 
 

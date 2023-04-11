@@ -21,7 +21,8 @@ server <- function(input, output) {
       labs(x = 'Sentiment',
            y = 'Proportion',
            title = 'Proportion of Sentiment') +
-      theme(plot.title = element_text(size=22))
+      theme(plot.title = element_text(size=18)) +
+      theme(axis.title.x=element_blank())
     
     })
 

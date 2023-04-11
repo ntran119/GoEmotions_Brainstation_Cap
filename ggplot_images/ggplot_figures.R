@@ -1,6 +1,6 @@
 library(tidyverse)
 
-df_simple <- read_csv("GitHub/GoEmotions_Brainstation_Cap/GoEmotions_Sentiment_simple.csv")
+df_simple <- read_csv("GoEmotions_Sentiment_simple.csv")
 
 
 df_simple %>% 
@@ -36,7 +36,30 @@ df_simple %>%
        title = 'Balance of Sentiment',
        subtitle = "Without Ambiguous Observations")
 
-# count without ambiguous observations
-df_simple %>% 
-  filter(Sentiment < 3) %>%
-  count()
+
+# read in data
+dota_comments <- read_csv("dota_comments_BERT.csv")
+dota_comments <- tibble::rowid_to_column(dota_comments, "ID")
+
+# BERT graph
+dota_comments %>% 
+  ggplot(aes(x = BERT)) +
+  geom_bar(aes(y = (..count..)/sum(..count..), fill = factor(..x..))) +
+  geom_text(aes(y = ((..count..)/sum(..count..)), label = scales::percent((..count..)/sum(..count..))), stat = "count", vjust = -0.25) +
+  scale_y_continuous(labels = scales::percent) +
+  theme(legend.position="none") +
+  labs(x = 'Sentiment',
+       y = 'Proportion',
+       title = 'Proportion of Sentiment')
+
+
+# LogReg graph
+dota_comments %>% 
+  ggplot(aes(x = Logistic_regression)) +
+  geom_bar(aes(y = (..count..)/sum(..count..), fill = factor(..x..))) +
+  geom_text(aes(y = ((..count..)/sum(..count..)), label = scales::percent((..count..)/sum(..count..))), stat = "count", vjust = -0.25) +
+  scale_y_continuous(labels = scales::percent) +
+  theme(legend.position="none") +
+  labs(x = 'Sentiment',
+       y = 'Proportion',
+       title = 'Proportion of Sentiment')

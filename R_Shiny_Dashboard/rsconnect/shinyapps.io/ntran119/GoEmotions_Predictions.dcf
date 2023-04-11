@@ -1,0 +1,13 @@
+name: GoEmotions_Predictions
+title: GoEmotions_Predictions
+username:
+account: ntran119
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 8813444
+bundleId: 7073146
+url: https://ntran119.shinyapps.io/GoEmotions_Predictions/
+when: 1681174607.75397
+lastSyncTime: 1681174607.75398
+asMultiple: FALSE
+asStatic: FALSE

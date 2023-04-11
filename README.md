@@ -15,3 +15,6 @@ Raw_data
 
 ggplot_images
 - R code used to create images for presentations
+
+Report
+- Capstone Report generated using R-markdown

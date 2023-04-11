@@ -13,3 +13,7 @@ install.packages("tidyverse")
 shiny
 install.packages('shiny')
 
+
+The web app is hosted online and can be access here:
+
+https://ntran119.shinyapps.io/GoEmotions_Predictions/

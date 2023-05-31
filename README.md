@@ -15,6 +15,7 @@ Raw_data
 
 ggplot_images
 - R code used to create images for presentations
+- https://ntran119.shinyapps.io/GoEmotions_Predictions/
 
 Report
 - Capstone Report generated using R-markdown

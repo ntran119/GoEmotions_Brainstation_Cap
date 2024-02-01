@@ -1,15 +1,15 @@
 
 ui <- navbarPage(
-  title = 'GoEmotions Sentiment',
+  title = 'GoEmotions Sentiment Prediction',
   tabPanel(title = 'Description',
-           h2('About this App'),
-           p('This dashboard was developed to showcase my sentiment classification models. 
-           The language models were trained using the Goemotions dataset from Google. 
-           This is a dataset of curated Reddit comments that were manually annotated for 27 emotions.'),
+           h1('About this App'),
+           p('I have developed this dashboard to demonstrate my sentiment classification models. 
+             These models were trained on the Goemotions dataset provided by Google, which consists of carefully selected Reddit comments that were manually labeled for 27 distinct emotions.'),
            br(),
-           p('The models trained were used for sentiment analysis on scraped Reddit data. 
-           The Reddit comments were scraped from a post for Dota2 patch 7.32e : https://www.reddit.com/r/DotA2/comments/11kh9ru/the_dead_reckoning_update_hola_muerta_gameplay/. 
-           Sentiment predictions were used to understand the communities reaction to the gameplay changes'),
+           p('Training data was vectorized using TF-IDF and optimized models were used to predict sentiment on scraped Reddit data. 
+           Comments were scraped from the Dota2 subreddit (patch 7.32e) : https://www.reddit.com/r/DotA2/comments/11kh9ru/the_dead_reckoning_update_hola_muerta_gameplay/.'),
+           br(),
+           p('Sentiment predictions are used to understand the communities reaction to new the gameplay changes. A pre-trained BERT model from hugging-face was also included: https://huggingface.co/nlptown/bert-base-multilingual-uncased-sentiment'),
            br(),
            p('To view how the models were trained you can visit the repository: https://github.com/ntran119/GoEmotions_Brainstation_Cap')),
   
